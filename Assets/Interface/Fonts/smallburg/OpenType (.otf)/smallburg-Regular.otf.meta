@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 9eb2e2401e38cd54d9e6867bf588919b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - smallburg
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5ab93a8bb861e1648954bf4fbabfc16e, type: 3}
+  - {fileID: 12800000, guid: 3eed3e587c307d14e960170e0b83ebca, type: 3}
+  - {fileID: 12800000, guid: 319a117ef8bc3104480c7b1646e8b24e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

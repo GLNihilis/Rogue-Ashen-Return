@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class CharacterEvents
+{
+    // Character damaged and damage value
+    public static UnityAction<GameObject, float> characterDamaged;
+
+    // Character healed and heal value
+    public static UnityAction<GameObject, float> characterHealed;
+
+}

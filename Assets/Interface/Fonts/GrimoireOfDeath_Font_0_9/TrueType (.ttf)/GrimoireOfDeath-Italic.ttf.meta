@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 64f7c7bc0c73db54ea2c5faf4248f330
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Grimoire Of Death
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 23dadaf6ed290624b83e7d9b169df644, type: 3}
+  - {fileID: 12800000, guid: b390bac33bf4fde42965bad5eef18c5f, type: 3}
+  - {fileID: 12800000, guid: 50015f9bf7bac544f800271b1fcd9300, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

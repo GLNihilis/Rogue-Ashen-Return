@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 6934f952f6344894ea436ef62b94c42c
+  - enabled: 1
+    path: Assets/Scenes/Dungeon_L0.unity
+    guid: 8ca2e495ec82852478304486cd6c8294
+  - enabled: 1
+    path: Assets/Scenes/Dungeon_L1.unity
+    guid: e9c6db61cdd03ff4ea2d33e999e7f069
+  - enabled: 1
+    path: Assets/Scenes/Forest_L0.unity
+    guid: 08c845090becd98468ec78725773b26f
+  - enabled: 1
+    path: Assets/Scenes/Forest_L1.unity
+    guid: 903f6a77159f645479a1cdf14a79bd71
+  - enabled: 1
+    path: Assets/Scenes/Forest_L2.unity
+    guid: 98d4cb7a4b18a0e4c9f32f64ccff2b6e
+  - enabled: 1
+    path: Assets/Scenes/Forest_L3.unity
+    guid: 568ef8e09d9634c4d99e1ea10ae92d17
+  - enabled: 1
+    path: Assets/Scenes/Castle_L0.unity
+    guid: 219733a656a6a1c4f85984f85be27b25
+  - enabled: 1
+    path: Assets/Scenes/Castle_L1.unity
+    guid: b71bc4140b609bf479e597b050104c50
+  - enabled: 1
+    path: Assets/Scenes/Castle_L2.unity
+    guid: c646e3b464cce28458fb087181ddb50e
+  - enabled: 1
+    path: Assets/Scenes/Quit Scene.unity
+    guid: 7c6164148137ca34f8a337c5ae201905
+  m_configObjects: {}
