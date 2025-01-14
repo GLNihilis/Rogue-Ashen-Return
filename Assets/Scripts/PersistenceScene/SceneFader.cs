@@ -18,7 +18,7 @@ public class SceneFader : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         fadeOutUIImage = GetComponent<Image>();
     }
@@ -31,6 +31,12 @@ public class SceneFader : MonoBehaviour
 
     public void CallFadeAndLoadScene(string _sceneToLoad)
     {
+        StartCoroutine(FadeAndLoadScene(FadeDirection.In, _sceneToLoad));
+    }
+
+    public void DeactiveDeathSceneAndLoadScene(string _sceneToLoad)
+    {
+        StartCoroutine(CanvasController.Instance.DeactiveDeathScreen());
         StartCoroutine(FadeAndLoadScene(FadeDirection.In, _sceneToLoad));
     }
 

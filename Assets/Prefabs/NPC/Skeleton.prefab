@@ -82,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 602227652, guid: 382562eda5f76834aad4aaa51eefebdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8323344197662751838}
-        m_TargetAssemblyTypeName: EnemyNPC, Assembly-CSharp
+        m_TargetAssemblyTypeName: Skeleton_NPC, Assembly-CSharp
         m_MethodName: OnHit
         m_Mode: 0
         m_Arguments:
@@ -235,8 +235,8 @@ MonoBehaviour:
   timeSinceHit: 0
   invincibilityTime: 0.25
   _isInvincible: 0
-  _maxHealth: 50
-  _health: 50
+  _maxHealth: 75
+  _health: 75
   _isAlive: 1
 --- !u!114 &1391570481916366076
 MonoBehaviour:

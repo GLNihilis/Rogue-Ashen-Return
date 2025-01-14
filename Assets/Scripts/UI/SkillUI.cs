@@ -9,16 +9,19 @@ public class SkillUI : MonoBehaviour
     public Slider slider_2;
     public Slider slider_3;
     public Slider slider_4;
+    public Slider slider_9;
 
     public Image image_1;
     public Image image_2;
     public Image image_3;
     public Image image_4;
+    public Image image_9;
 
     [SerializeField] private Image imageCooldown_1;
     [SerializeField] private Image imageCooldown_2;
     [SerializeField] private Image imageCooldown_3;
     [SerializeField] private Image imageCooldown_4;
+    [SerializeField] private Image imageCooldown_9;
 
     private void Awake()
     {
@@ -75,6 +78,15 @@ public class SkillUI : MonoBehaviour
             image_4.enabled = false;
         }
 
+        if (PlayerController.Instance.unlocked_Healing)
+        {
+            image_9.enabled = true;
+        }
+        else
+        {
+            image_9.enabled = false;
+        }
+
         if (PlayerController.Instance.timeSinceCast_1 < PlayerController.Instance.timeCast_1)
         {
 
@@ -117,6 +129,17 @@ public class SkillUI : MonoBehaviour
         else
         {
             slider_4.value = 0f;
+        }
+
+        if (PlayerController.Instance.timeSinceCast_9 < PlayerController.Instance.timeCast_9)
+        {
+
+            float cooldownProgress_9 = PlayerController.Instance.timeSinceCast_9 / PlayerController.Instance.timeCast_9;
+            slider_9.value = cooldownProgress_9;
+        }
+        else
+        {
+            slider_9.value = 0f;
         }
     }
 }

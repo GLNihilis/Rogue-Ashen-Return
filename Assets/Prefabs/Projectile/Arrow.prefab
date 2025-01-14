@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 146749205916809396}
   - component: {fileID: 6766405984804782285}
   - component: {fileID: 7080039584750859993}
+  - component: {fileID: -4630588972528606973}
   - component: {fileID: 8761307909163943752}
   m_Layer: 10
   m_Name: Arrow
@@ -167,6 +168,33 @@ PolygonCollider2D:
       - {x: 0.18838882, y: -0.07530689}
       - {x: 0.34305334, y: -0.0751853}
   m_UseDelaunayMesh: 0
+--- !u!50 &-4630588972528606973
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747552718709955777}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &8761307909163943752
 MonoBehaviour:
   m_ObjectHideFlags: 0

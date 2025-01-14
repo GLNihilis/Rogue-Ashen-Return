@@ -8789,6 +8789,17 @@ MonoBehaviour:
   startPoint: {fileID: 1623309010}
   exitDirection: {x: -1, y: 0}
   exitTime: 0.25
+--- !u!114 &374239640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 71422785935257609, guid: db2a24d214953b94e9a44973b9b27b6a, type: 3}
+  m_PrefabInstance: {fileID: 8111157981189840001}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750604937be6b4541a5dcd46a60bc779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &904156735
 GameObject:
   m_ObjectHideFlags: 0
@@ -20714,16 +20725,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -9, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 23
-      m_TileSpriteIndex: 23
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 0, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -20785,16 +20786,6 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -12, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 22
-      m_TileSpriteIndex: 22
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -9, y: -3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 22
@@ -20875,16 +20866,6 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -12, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 21
-      m_TileSpriteIndex: 21
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -9, y: -2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 21
@@ -21118,11 +21099,11 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 61cbcb6f4c9d3ea489695fbf485ee294, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 2ad5d232f962d554a8ae0d2c392a6843, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: daa021c668828b448913a38a017bed99, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: fb454bc269892ef4dbbe3eb1851fb371, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: ff926f3ec67830f42b50c767db93b95d, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -21167,14 +21148,14 @@ Tilemap:
     m_Data: {fileID: -63720770, guid: fc125cd2b902af1428138adb4c7f6ec4, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1671617348, guid: fc125cd2b902af1428138adb4c7f6ec4, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: -722177063, guid: fc125cd2b902af1428138adb4c7f6ec4, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: -1739194997, guid: fc125cd2b902af1428138adb4c7f6ec4, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: 1807346242, guid: fc125cd2b902af1428138adb4c7f6ec4, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 49
+  - m_RefCount: 46
     m_Data:
       e00: 1
       e01: 0
@@ -21193,7 +21174,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 49
+  - m_RefCount: 46
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -21337,7 +21318,7 @@ Transform:
   m_GameObject: {fileID: 1623309009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21353,7 +21334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752836025}
   m_Layer: 0
-  m_Name: Dungeon_L1
+  m_Name: L1_Dungeon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21377,6 +21358,17 @@ Transform:
   - {fileID: 2111163091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1810586335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8242798240047279626, guid: ebb812f3e4261b444bec486a04a6fc6f, type: 3}
+  m_PrefabInstance: {fileID: 3065883753971047761}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eadc3b35f6237af488de6b0c5f328ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2111163089
 GameObject:
   m_ObjectHideFlags: 0
@@ -21781,6 +21773,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2505955818776685842, guid: ebb812f3e4261b444bec486a04a6fc6f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1810586335}
+    - target: {fileID: 2505955818776685842, guid: ebb812f3e4261b444bec486a04a6fc6f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactiveDeathSceneAndLoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 2958767570262262519, guid: ebb812f3e4261b444bec486a04a6fc6f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -21808,7 +21808,7 @@ PrefabInstance:
     - target: {fileID: 3429519949808573816, guid: ebb812f3e4261b444bec486a04a6fc6f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8111157981189840002}
+      objectReference: {fileID: 374239640}
     - target: {fileID: 4233091861596823337, guid: ebb812f3e4261b444bec486a04a6fc6f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -21935,6 +21935,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2666227315884534368, guid: ba85e0047ec542146aa86ca4d95637c3, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666227315884534368, guid: ba85e0047ec542146aa86ca4d95637c3, type: 3}
+      propertyPath: dialogues.Array.data[0]
+      value: Brave knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666227315884534368, guid: ba85e0047ec542146aa86ca4d95637c3, type: 3}
+      propertyPath: dialogues.Array.data[1]
+      value: You have finally awakened.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666227315884534368, guid: ba85e0047ec542146aa86ca4d95637c3, type: 3}
+      propertyPath: dialogues.Array.data[2]
+      value: The world is descending into chaos. The Bringer of Death has invaded
+        our realm, plunging it into despair.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666227315884534368, guid: ba85e0047ec542146aa86ca4d95637c3, type: 3}
+      propertyPath: dialogues.Array.data[3]
+      value: "We beseech you\u2014be our savior."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666227315884534368, guid: ba85e0047ec542146aa86ca4d95637c3, type: 3}
+      propertyPath: dialogues.Array.data[4]
+      value: To seal the Bringer of Death away, you must retrieve the five sacred
+        keys scattered across the land.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666227315884534368, guid: ba85e0047ec542146aa86ca4d95637c3, type: 3}
+      propertyPath: dialogues.Array.data[5]
+      value: The journey ahead will be perilous, but you are our only hope. May fortune
+        and courage guide your steps.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666227315884534368, guid: ba85e0047ec542146aa86ca4d95637c3, type: 3}
+      propertyPath: dialogues.Array.data[6]
+      value: To seal the Lord of Death away, you must retrieve the five sacred keys
+        scattered across the land.
+      objectReference: {fileID: 0}
     - target: {fileID: 2741121878039943179, guid: ba85e0047ec542146aa86ca4d95637c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11
@@ -22276,6 +22312,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 71422785935257609, guid: db2a24d214953b94e9a44973b9b27b6a, type: 3}
+      propertyPath: fader
+      value: 
+      objectReference: {fileID: 1810586335}
+    - target: {fileID: 71422785935257609, guid: db2a24d214953b94e9a44973b9b27b6a, type: 3}
       propertyPath: pause
       value: 
       objectReference: {fileID: 947062222}
@@ -22340,17 +22380,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db2a24d214953b94e9a44973b9b27b6a, type: 3}
---- !u!114 &8111157981189840002 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 71422785935257609, guid: db2a24d214953b94e9a44973b9b27b6a, type: 3}
-  m_PrefabInstance: {fileID: 8111157981189840001}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 750604937be6b4541a5dcd46a60bc779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -22361,7 +22390,7 @@ SceneRoots:
   - {fileID: 3065883753971047761}
   - {fileID: 373120551904062618}
   - {fileID: 961738118}
-  - {fileID: 1752836025}
   - {fileID: 8111157981189840001}
+  - {fileID: 1752836025}
   - {fileID: 5916849830763230121}
   - {fileID: 3223572603225562687}

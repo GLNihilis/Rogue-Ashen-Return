@@ -392,7 +392,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1317571327, guid: 5ee4d7b2942580a408678d3b20b4d809, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -545,8 +545,8 @@ MonoBehaviour:
   timeSinceHit: 0
   invincibilityTime: 0.25
   _isInvincible: 0
-  _maxHealth: 100
-  _health: 100
+  _maxHealth: 125
+  _health: 125
   _isAlive: 1
 --- !u!114 &6363538045522479429
 MonoBehaviour:

@@ -266,6 +266,8 @@ public class Skeleton_NPC : MonoBehaviour
     private void Update()
     {
         if (GameManager.Instance.gameIsPaused) return;
+
+        UpdateEnemyStates();
     }
 
     private void FixedUpdate()
@@ -283,7 +285,7 @@ public class Skeleton_NPC : MonoBehaviour
         //    Movement();
         //}
 
-        UpdateEnemyStates();
+        //UpdateEnemyStates();
     }
 
     private void FlipDirection()
@@ -322,11 +324,11 @@ public class Skeleton_NPC : MonoBehaviour
 
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
 
-        if (!damageable.IsAlive)
-        {
-            StartCoroutine(Alive());
-            enemySpawner.ReturnPool(gameObject);
-        }
+        //if (!damageable.IsAlive)
+        //{
+        //    StartCoroutine(Alive());
+        //    enemySpawner.ReturnPool(gameObject);
+        //}
     }
 
     public void OnCliffDetected()
@@ -337,11 +339,11 @@ public class Skeleton_NPC : MonoBehaviour
         }
     }
 
-    public IEnumerator Alive()
-    {
-        damageable.IsAlive = true;
-        damageable.Health = damageable.MaxHealth;
-        ChangeState(EnemyStates.Idle_State);
-        yield return null;
-    }
+    //public IEnumerator Alive()
+    //{
+    //    damageable.IsAlive = true;
+    //    damageable.Health = damageable.MaxHealth;
+    //    ChangeState(EnemyStates.Idle_State);
+    //    yield return null;
+    //}
 }

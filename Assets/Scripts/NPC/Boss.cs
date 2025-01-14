@@ -407,10 +407,7 @@ public class Boss : MonoBehaviour
     private void Update()
     {
         if (GameManager.Instance.gameIsPaused) return;
-    }
 
-    private void FixedUpdate()
-    {
         UpdateEnemyStates();
 
         if (hand_CurrentCastTimer > 0)
@@ -430,12 +427,41 @@ public class Boss : MonoBehaviour
 
         if (!IsAlive)
         {
-            //SpawnBoss.Instance.IsNotTriggered();
+            SpawnBoss.Instance.IsNotTriggered();
         }
 
         hand_CurrentCastTimer_ReadOnly = hand_CurrentCastTimer;
         curse_CurrentCastTimer_ReadOnly = curse_CurrentCastTimer;
         shadow_CurrentCastTimer_ReadOnly = shadow_CurrentCastTimer;
+    }
+
+    private void FixedUpdate()
+    {
+        //UpdateEnemyStates();
+
+        //if (hand_CurrentCastTimer > 0)
+        //{
+        //    hand_CurrentCastTimer -= Time.deltaTime;
+        //}
+
+        //if (curse_CurrentCastTimer > 0)
+        //{
+        //    curse_CurrentCastTimer -= Time.deltaTime;
+        //}
+
+        //if (shadow_CurrentCastTimer > 0)
+        //{
+        //    shadow_CurrentCastTimer -= Time.deltaTime;
+        //}
+
+        //if (!IsAlive)
+        //{
+        //    SpawnBoss.Instance.IsNotTriggered();
+        //}
+
+        //hand_CurrentCastTimer_ReadOnly = hand_CurrentCastTimer;
+        //curse_CurrentCastTimer_ReadOnly = curse_CurrentCastTimer;
+        //shadow_CurrentCastTimer_ReadOnly = shadow_CurrentCastTimer;
     }
 
     //private void FlipDirection()

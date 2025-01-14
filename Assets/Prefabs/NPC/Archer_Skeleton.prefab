@@ -82,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 59741c4e9aa497a4c952213be863aebf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -153,8 +153,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.34015632, y: -0.2689377}
-  m_Size: {x: 2.721559, y: 3.657657}
+  m_Offset: {x: 0.16220045, y: -0.2689377}
+  m_Size: {x: 2.3656473, y: 3.657657}
   m_Direction: 0
 --- !u!95 &4172780872473762132
 Animator:

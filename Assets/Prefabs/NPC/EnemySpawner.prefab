@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs: {fileID: 0}
   poolSize: 1
-  respawnDelay: 3
+  respawnDelay: 5
   randomRangeX: 3
   randomRangeY: 0

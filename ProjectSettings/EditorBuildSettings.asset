@@ -15,6 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Dungeon_L1.unity
     guid: e9c6db61cdd03ff4ea2d33e999e7f069
   - enabled: 1
+    path: Assets/Scenes/Dungeon_L2.unity
+    guid: dc9ce5629b83f194c9ba9b7805a7147e
+  - enabled: 1
+    path: Assets/Scenes/Dungeon_L3.unity
+    guid: 81d866fe4e40af14aa38ba72bf13bfe3
+  - enabled: 1
+    path: Assets/Scenes/Dungeon_L4.unity
+    guid: 9ff4ea03bf1b15c4ba78cfed45b5973f
+  - enabled: 1
     path: Assets/Scenes/Forest_L0.unity
     guid: 08c845090becd98468ec78725773b26f
   - enabled: 1
@@ -27,6 +36,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Forest_L3.unity
     guid: 568ef8e09d9634c4d99e1ea10ae92d17
   - enabled: 1
+    path: Assets/Scenes/Tower_L0.unity
+    guid: 7b3dfb7729b3938499497357ac21071d
+  - enabled: 1
+    path: Assets/Scenes/Tower_L1.unity
+    guid: 25fb6150d423da74ab44b3d7cb891f63
+  - enabled: 1
+    path: Assets/Scenes/Cave_L0.unity
+    guid: 9521398ee39b43a4d943a545e1f5e63e
+  - enabled: 1
+    path: Assets/Scenes/Cave_L1.unity
+    guid: 3d0a33603944b054ba8d930461eed98f
+  - enabled: 1
+    path: Assets/Scenes/Cave_L2.unity
+    guid: e8aa0f1efbc028b479c958414fe68268
+  - enabled: 1
+    path: Assets/Scenes/Cave_L3.unity
+    guid: c0d6266376401544eacb7462a1adc88f
+  - enabled: 1
     path: Assets/Scenes/Castle_L0.unity
     guid: 219733a656a6a1c4f85984f85be27b25
   - enabled: 1
@@ -35,6 +62,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Castle_L2.unity
     guid: c646e3b464cce28458fb087181ddb50e
+  - enabled: 1
+    path: Assets/Scenes/Castle_L3.unity
+    guid: 5fb2bc05a218e0e438ff544f5e893f41
+  - enabled: 1
+    path: Assets/Scenes/Castle_L4.unity
+    guid: 24eb5389b34346b46baf597612eb31aa
+  - enabled: 1
+    path: Assets/Scenes/Castle_SR.unity
+    guid: ce44559f67de3e144b5a8de591ec77fc
   - enabled: 1
     path: Assets/Scenes/Quit Scene.unity
     guid: 7c6164148137ca34f8a337c5ae201905

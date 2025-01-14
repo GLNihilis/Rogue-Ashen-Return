@@ -114,6 +114,15 @@ public struct SaveData
 
             Key_1 = PlayerController.Instance.unlocked_Key_1;
             writer.Write(Key_1);
+            Key_2 = PlayerController.Instance.unlocked_Key_2;
+            writer.Write(Key_2);
+            Key_3 = PlayerController.Instance.unlocked_Key_3;
+            writer.Write(Key_3);
+            Key_4 = PlayerController.Instance.unlocked_Key_4;
+            writer.Write(Key_4);
+            Key_5 = PlayerController.Instance.unlocked_Key_5;
+            writer.Write(Key_5);
+
 
             playerPosition = PlayerController.Instance.transform.position;
             writer.Write(playerPosition.x);
@@ -144,6 +153,10 @@ public struct SaveData
                 playerUnlockedWaterTornado = reader.ReadBoolean();
 
                 Key_1 = reader.ReadBoolean();
+                Key_2 = reader.ReadBoolean();
+                Key_3 = reader.ReadBoolean();
+                Key_4 = reader.ReadBoolean();
+                Key_5 = reader.ReadBoolean();
 
                 playerPosition.x = reader.ReadSingle();
                 playerPosition.y = reader.ReadSingle();
@@ -157,6 +170,10 @@ public struct SaveData
                     PlayerController.Instance.transform.position = playerPosition;
 
                     PlayerController.Instance.unlocked_Key_1 = Key_1;
+                    PlayerController.Instance.unlocked_Key_2 = Key_2;
+                    PlayerController.Instance.unlocked_Key_3 = Key_3;
+                    PlayerController.Instance.unlocked_Key_4 = Key_4;
+                    PlayerController.Instance.unlocked_Key_5 = Key_5;
 
                     PlayerController.Instance.unlocked_FireBall = playerUnlockedFireBall;
                     PlayerController.Instance.unlocked_WindSlash = playerUnlockedWindSlash;
@@ -182,6 +199,11 @@ public struct SaveData
             Debug.Log("File doesn't exist // #data/save.player.data");
 
             PlayerController.Instance.unlocked_Key_1 = false;
+            PlayerController.Instance.unlocked_Key_2 = false;
+            PlayerController.Instance.unlocked_Key_3 = false;
+            PlayerController.Instance.unlocked_Key_4 = false;
+            PlayerController.Instance.unlocked_Key_5 = false;
+
 
             PlayerController.Instance.unlocked_FireBall = false;
             PlayerController.Instance.unlocked_WindSlash = false;

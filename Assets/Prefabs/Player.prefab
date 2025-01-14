@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8512510455451228999}
   - component: {fileID: 1103551813211745675}
-  - component: {fileID: 1972728745889466463}
+  - component: {fileID: 2645292278090483422}
   m_Layer: 9
   m_Name: SwordAttack_2
   m_TagString: Untagged
@@ -90,7 +90,7 @@ PolygonCollider2D:
       - {x: 2.2606192, y: -1.1388781}
       - {x: 2.2877269, y: -0.11701575}
   m_UseDelaunayMesh: 0
---- !u!114 &1972728745889466463
+--- !u!114 &2645292278090483422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,11 +99,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 274705721349867934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a93be791a1be1e459acf1a52e85a3d9, type: 3}
+  m_Script: {fileID: 11500000, guid: aa0b9a60f470ea743b438867f45a0fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 7
   knockBack: {x: 1.5, y: 1}
+  attackDamageCheatMode: 100
+  knockBackCheatMode: {x: 0, y: 0}
 --- !u!1 &1584712634066939800
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059566278704072467}
   - component: {fileID: 8975864142526132328}
-  - component: {fileID: 817608297836556045}
+  - component: {fileID: 5454871587486057709}
   m_Layer: 9
   m_Name: SwordAttack_3
   m_TagString: Untagged
@@ -226,7 +228,7 @@ PolygonCollider2D:
       - {x: 1.4348496, y: -0.8335284}
       - {x: 2.2036026, y: -0.7291427}
   m_UseDelaunayMesh: 0
---- !u!114 &817608297836556045
+--- !u!114 &5454871587486057709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,11 +237,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2557678921568569276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a93be791a1be1e459acf1a52e85a3d9, type: 3}
+  m_Script: {fileID: 11500000, guid: aa0b9a60f470ea743b438867f45a0fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
   knockBack: {x: 2, y: 0}
+  attackDamageCheatMode: 100
+  knockBackCheatMode: {x: 0, y: 0}
 --- !u!1 &2774429435800723550
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,8 +254,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1296808394371976019}
   - component: {fileID: 607969171778140478}
-  - component: {fileID: 9091868782348800313}
   - component: {fileID: 7728440943064220872}
+  - component: {fileID: 8885530829122837160}
   m_Layer: 31
   m_Name: SpellPoint_2
   m_TagString: Untagged
@@ -331,20 +335,6 @@ PolygonCollider2D:
       - {x: 2.9245536, y: -1.6429532}
       - {x: 3.3151114, y: -1.1618409}
   m_UseDelaunayMesh: 0
---- !u!114 &9091868782348800313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2774429435800723550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a93be791a1be1e459acf1a52e85a3d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage: 10
-  knockBack: {x: 3, y: 2}
 --- !u!68 &7728440943064220872
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -400,6 +390,22 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &8885530829122837160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774429435800723550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0b9a60f470ea743b438867f45a0fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 10
+  knockBack: {x: 3, y: 2}
+  attackDamageCheatMode: 100
+  knockBackCheatMode: {x: 0, y: 0}
 --- !u!1 &3326738764701297506
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2070902114890512449
 Transform:
   m_ObjectHideFlags: 0
@@ -935,7 +941,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2066869823491964748}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnOpenMap
+        m_MethodName: OnCheatMode
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1115,25 +1121,23 @@ MonoBehaviour:
   rollSpeed: 12
   rollDuration: 0.5
   rollCooldown: 1
+  rollCost: 20
   healLevel_1: 20
   healCost_1: 20
   healLevel_2: 40
-  healCost_2: 20
+  healCost_2: 40
   healLevel_3: 60
   healCost_3: 60
+  timeCast_9: 1
   spellMana_1: 5
   spellMana_2: 10
   spellMana_3: 15
   spellMana_4: 20
   summonDistance: 5
   timeCast_1: 3
-  timeSinceCast_1: 0
   timeCast_2: 5
-  timeSinceCast_2: 0
   timeCast_3: 7
-  timeSinceCast_3: 0
   timeCast_4: 9
-  timeSinceCast_4: 0
   SpellPoint_1: {fileID: 2593988277769723479}
   SpellPoint_2: {fileID: 1296808394371976019}
   SpellPoint_3: {fileID: 3901938536386355620}
@@ -1143,9 +1147,10 @@ MonoBehaviour:
   Spell_3: {fileID: 6264307283223867092, guid: b7505dc679722bd44a592f08e6aa2e4d, type: 3}
   Spell_4: {fileID: 5116865775258178389, guid: f788a7746e4530643b148ac2ca1469b1, type: 3}
   isCasting: 0
+  damageSelf: 30
   cutscene: 0
-  openMap: 0
   landingSoundPlayed: 0
+  isCheatMode: 0
   _isFacingRight: 1
   _isMoving: 0
   _isJumping: 0
@@ -1153,20 +1158,26 @@ MonoBehaviour:
   unlocked_DoubleJump: 0
   unlocked_Healing: 0
   unlocked_Rolling: 0
-  unlocked_Spell_1: 0
-  unlocked_Spell_2: 0
-  unlocked_Spell_3: 0
-  unlocked_Spell_4: 0
+  unlocked_FireBall: 0
+  unlocked_WindSlash: 0
+  unlocked_EarthBump: 0
+  unlocked_WaterTornado: 0
+  unlocked_Key_1: 0
+  unlocked_Key_2: 0
+  unlocked_Key_3: 0
+  unlocked_Key_4: 0
+  unlocked_Key_5: 0
   jumpBufferCounter_ReadOnly: 0
   currentJumpMultiplier_ReadOnly: 0
   coyoteTimeCounter_ReadOnly: 0
   airJumpCounter_ReadOnly: 0
   rollCooldownTimer_ReadOnly: 0
   rollTimer_ReadOnly: 0
-  timeCast_1_ReadOnly: 0
-  timeCast_2_ReadOnly: 0
-  timeCast_3_ReadOnly: 0
-  timeCast_4_ReadOnly: 0
+  timeSinceCast_1: 0
+  timeSinceCast_2: 0
+  timeSinceCast_3: 0
+  timeSinceCast_4: 0
+  timeSinceCast_9: 0
 --- !u!114 &2284743053940137898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,7 +1294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8670027902329430569}
   - component: {fileID: 4708476947391637511}
-  - component: {fileID: 2547929748385922483}
+  - component: {fileID: 2698477167473821021}
   m_Layer: 9
   m_Name: SwordAirAttack
   m_TagString: Untagged
@@ -1363,7 +1374,7 @@ PolygonCollider2D:
       - {x: 2.2606192, y: -1.1388781}
       - {x: 2.2877269, y: -0.11701575}
   m_UseDelaunayMesh: 0
---- !u!114 &2547929748385922483
+--- !u!114 &2698477167473821021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1372,11 +1383,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4899829008441278061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a93be791a1be1e459acf1a52e85a3d9, type: 3}
+  m_Script: {fileID: 11500000, guid: aa0b9a60f470ea743b438867f45a0fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
   knockBack: {x: 0.5, y: 0.5}
+  attackDamageCheatMode: 100
+  knockBackCheatMode: {x: 0, y: 0}
 --- !u!1 &4934814853350944737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,8 +1400,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5803061465830509939}
   - component: {fileID: 6605138928585008303}
-  - component: {fileID: 4510453533237634402}
   - component: {fileID: 6556917138531488265}
+  - component: {fileID: 2576628284861928650}
   m_Layer: 9
   m_Name: SwordAttack_4
   m_TagString: Untagged
@@ -1468,20 +1481,6 @@ PolygonCollider2D:
       - {x: 2.9245536, y: -1.6429532}
       - {x: 3.3151114, y: -1.1618409}
   m_UseDelaunayMesh: 0
---- !u!114 &4510453533237634402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934814853350944737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a93be791a1be1e459acf1a52e85a3d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage: 15
-  knockBack: {x: 5, y: 2}
 --- !u!68 &6556917138531488265
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1537,6 +1536,22 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2576628284861928650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934814853350944737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa0b9a60f470ea743b438867f45a0fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 15
+  knockBack: {x: 5, y: 2}
+  attackDamageCheatMode: 100
+  knockBackCheatMode: {x: 0, y: 0}
 --- !u!1 &8040025331112669789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2562096629739345366}
   - component: {fileID: 1690645586741163933}
-  - component: {fileID: 8556076326079187314}
+  - component: {fileID: 3615819520661691541}
   m_Layer: 9
   m_Name: SwordAttack_1
   m_TagString: Untagged
@@ -1627,7 +1642,7 @@ PolygonCollider2D:
       - {x: 1.9955783, y: -1.0591022}
       - {x: 2.1829221, y: -0.40249598}
   m_UseDelaunayMesh: 0
---- !u!114 &8556076326079187314
+--- !u!114 &3615819520661691541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1636,8 +1651,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8040025331112669789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a93be791a1be1e459acf1a52e85a3d9, type: 3}
+  m_Script: {fileID: 11500000, guid: aa0b9a60f470ea743b438867f45a0fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 5
   knockBack: {x: 1, y: 1.5}
+  attackDamageCheatMode: 100
+  knockBackCheatMode: {x: 0, y: 0}

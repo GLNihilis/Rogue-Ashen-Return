@@ -78,7 +78,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Map",
+                    "name": "CheatMode",
                     "type": "Button",
                     "id": "a4e06091-76fb-49af-87ed-bb681c12a3a5",
                     "expectedControlType": "Button",
@@ -366,11 +366,11 @@
                 {
                     "name": "",
                     "id": "f5c92e66-d7bd-457f-bda3-7486931a50b5",
-                    "path": "<Keyboard>/m",
+                    "path": "<Keyboard>/backquote",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Map",
+                    "action": "CheatMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

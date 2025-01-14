@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.Collections;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -66,6 +64,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rollSpeed = 12f;
     [SerializeField] private float rollDuration = 0.5f;
     [SerializeField] private float rollCooldown = 1f;
+    [SerializeField] private float rollCost = 20f;
     private float rollTimer = 0f;
     private float rollCooldownTimer = 0f;
     
@@ -73,9 +72,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float healLevel_1 = 20f;
     [SerializeField] private float healCost_1 = 20f;
     [SerializeField] private float healLevel_2 = 40f;
-    [SerializeField] private float healCost_2 = 20f;
+    [SerializeField] private float healCost_2 = 40f;
     [SerializeField] private float healLevel_3 = 60f;
     [SerializeField] private float healCost_3 = 60f;
+    [SerializeField] public float timeCast_9 = 1f;
 
     [Header("Spell Settings")]
     [SerializeField] private float spellMana_1 = 5f;
@@ -84,13 +84,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float spellMana_4 = 20f;
     [SerializeField] private float summonDistance = 5f;
     [SerializeField] public float timeCast_1 = 3f;
-    public float timeSinceCast_1;
     [SerializeField] public float timeCast_2 = 5f;
-    public float timeSinceCast_2;
     [SerializeField] public float timeCast_3 = 7f;
-    public float timeSinceCast_3;
     [SerializeField] public float timeCast_4 = 9f;
-    public float timeSinceCast_4;
     [SerializeField] Transform SpellPoint_1, SpellPoint_2, SpellPoint_3, SpellPoint_4;
     [SerializeField] GameObject Spell_1;
     [SerializeField] GameObject Spell_2;
@@ -99,9 +95,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public bool isCasting;
 
     [Header("Other Settings")]
+    [SerializeField] private float damageSelf = 45f;
     [SerializeField] public bool cutscene = false;
-    [SerializeField] public bool openMap = false;
     [SerializeField] public bool landingSoundPlayed;
+    [SerializeField] public bool isCheatMode;
 
     [Header("Player Status")]
     public bool _isFacingRight = true;
@@ -199,6 +196,8 @@ public class PlayerController : MonoBehaviour
     public bool unlocked_Key_1;
     public bool unlocked_Key_2;
     public bool unlocked_Key_3;
+    public bool unlocked_Key_4;
+    public bool unlocked_Key_5;
 
     [Header("ReadOnly_Attribute " + " >> Do Not Change <<")]
     [SerializeField] private float jumpBufferCounter_ReadOnly;
@@ -207,10 +206,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float airJumpCounter_ReadOnly;
     [SerializeField] private float rollCooldownTimer_ReadOnly;
     [SerializeField] private float rollTimer_ReadOnly;
-    [SerializeField] private float timeCast_1_ReadOnly;
-    [SerializeField] private float timeCast_2_ReadOnly;
-    [SerializeField] private float timeCast_3_ReadOnly;
-    [SerializeField] private float timeCast_4_ReadOnly;
+    public float timeSinceCast_1;
+    public float timeSinceCast_2;
+    public float timeSinceCast_3;
+    public float timeSinceCast_4;
+    public float timeSinceCast_9;
 
     public float currentMoveSpeed
     {
@@ -273,18 +273,11 @@ public class PlayerController : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
-        //if (FindObjectsOfType<PlayerController>().Length > 1)
-        //{
-        //    Destroy(gameObject);
-        //}
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //SaveData.Instance.Load_PlayerData();
-
         if (GameManager.Instance != null && !GameManager.Instance.gameIsPaused)
         {
             SaveData.Instance.Load_PlayerData();
@@ -305,6 +298,11 @@ public class PlayerController : MonoBehaviour
         if (GameManager.Instance.gameIsPaused) return;
 
         if (cutscene) return;
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            damageable.Health -= damageSelf;
+        }
     }
 
     private void FixedUpdate()
@@ -472,17 +470,14 @@ public class PlayerController : MonoBehaviour
         }
 
         // Double Jump
-        else if (unlocked_DoubleJump)
+        if (context.started && !touchingDirections.IsGrounded && airJumpCounter < maxAirJumps && unlocked_DoubleJump)
         {
-            if (context.started && !touchingDirections.IsGrounded && airJumpCounter < maxAirJumps)
-            {
-                audioSource.PlayOneShot(doubleJumpSound);
-                animator.SetTrigger(AnimationsString.jumpTrigger);
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            audioSource.PlayOneShot(doubleJumpSound);
+            animator.SetTrigger(AnimationsString.jumpTrigger);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
-                IsJumping = true;
-                airJumpCounter++;
-            }
+            IsJumping = true;
+            airJumpCounter++;
         }
 
         // Variable Jump Height
@@ -521,6 +516,8 @@ public class PlayerController : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
             landingSoundPlayed = false;
         }
+
+        timeSinceCast_9 = Mathf.Max(0f, timeSinceCast_9 - Time.deltaTime); // Never let the value below more than 0
     }
 
     public void OnAttack(InputAction.CallbackContext context)
@@ -550,7 +547,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnHeal(InputAction.CallbackContext context)
     {
-        if (unlocked_Healing)
+        if (unlocked_Healing && timeSinceCast_9 <= 0)
         {
             if (context.started && IsAlive && touchingDirections.IsGrounded)
             {
@@ -572,6 +569,8 @@ public class PlayerController : MonoBehaviour
                     spellable.UseMana(healCost_3);
                 }
             }
+
+            timeSinceCast_9 = timeCast_9;
         }
     }
 
@@ -579,13 +578,13 @@ public class PlayerController : MonoBehaviour
     {
         if (unlocked_Rolling)
         {
-            if (context.started && touchingDirections.IsGrounded && !IsRolling && rollCooldownTimer <= 0f && spellable.Stamina >= 20)
+            if (context.started && touchingDirections.IsGrounded && !IsRolling && rollCooldownTimer <= 0f && spellable.Stamina >= rollCost)
             {
                 audioSource.PlayOneShot(rollSound);
                 animator.SetTrigger(AnimationsString.rollTrigger);
                 StartRoll();
                 rollCooldownTimer = rollCooldown;
-                spellable.UseStamina(20f);
+                spellable.UseStamina(rollCost);
             }
         }
     }
@@ -701,11 +700,6 @@ public class PlayerController : MonoBehaviour
         {
             timeSinceCast_4 = Mathf.Max(0f, timeSinceCast_4 - Time.deltaTime); // Never let the value below more than 0
         }
-
-        timeCast_1_ReadOnly = timeSinceCast_1; // No Function Just For Testing
-        timeCast_2_ReadOnly = timeSinceCast_2; // No Function Just For Testing
-        timeCast_3_ReadOnly = timeSinceCast_3; // No Function Just For Testing
-        timeCast_4_ReadOnly = timeSinceCast_4; // No Function Just For Testing
     }
 
     public IEnumerator CastCoroutine()
@@ -757,29 +751,79 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnOpenMap(InputAction.CallbackContext context)
+    public void OnCheatMode(InputAction.CallbackContext context)
     {
-    //    if (context.started && damageable.IsAlive)
-    //    {
-    //        openMap = true;
-    //        ToggleMap();
-    //    }
-    //    else if (context.canceled && damageable.IsAlive)
-    //    {
-    //        openMap = false;
-    //        ToggleMap();
-    //    }
+        if (context.started && IsAlive)
+        {
+            ToggleCheatMode();
+        }
     }
 
-    //public void ToggleMap()
-    //{
-    //    if (openMap)
-    //    {
-    //        
-    //    }
-    //    else
-    //    {
-    //        
-    //    }
-    //}
+    public void ToggleCheatMode()
+    {
+        if (!isCheatMode)
+        {
+            moveSpeed = 15f;
+            airSpeed = 15f;
+            jumpForce = 45f;
+            rollSpeed = 18f;
+            damageable.Health = 100f;
+            spellable.Mana = 100f;
+            spellable.Stamina = 100f;
+            damageable.invincibilityTime = 999f;
+
+            rollCost = 0f;
+            healCost_1 = 0f;
+            spellMana_1 = 0f;
+            spellMana_2 = 0f;
+            spellMana_3 = 0f;
+            spellMana_4 = 0f;
+            timeCast_1 = 0.5f;
+            timeCast_2 = 0.5f;
+            timeCast_3 = 0.5f;
+            timeCast_4 = 0.5f;
+            timeCast_9 = 0.5f;
+
+            damageable.IsInvincible = true;
+            unlocked_DoubleJump = true;
+            unlocked_Healing = true;
+            unlocked_Rolling = true;
+            unlocked_FireBall = true;
+            unlocked_WindSlash = true;
+            unlocked_EarthBump = true;
+            unlocked_WaterTornado = true;
+            unlocked_Key_1 = true;
+            unlocked_Key_2 = true;
+            unlocked_Key_3 = true;
+            unlocked_Key_4 = true;
+            unlocked_Key_5 = true;
+
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+            isCheatMode = true;
+        }
+        else if (isCheatMode)
+        {
+            moveSpeed = 9f;
+            airSpeed = 9f;
+            jumpForce = 30f;
+            rollSpeed = 12f;
+            damageable.invincibilityTime = 0.5f;
+            damageable.IsInvincible = false;
+
+            rollCost = 20f;
+            healCost_1 = 20f;
+            spellMana_1 = 5f;
+            spellMana_2 = 10f;
+            spellMana_3 = 15f;
+            spellMana_4 = 20f;
+            timeCast_1 = 3f;
+            timeCast_2 = 5f;
+            timeCast_3 = 7f;
+            timeCast_4 = 9f;
+            timeCast_9 = 1f;
+
+            GetComponent<SpriteRenderer>().color = Color.white;
+            isCheatMode = false;
+        }
+    }
 }

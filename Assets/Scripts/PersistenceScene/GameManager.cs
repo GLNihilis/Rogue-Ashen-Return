@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     AudioSource audioSource;
-    public string transitionedFromScene;
+    public string transitionedFromScene; // Store the previous scene
+    [SerializeField] private int targetFPS = 60;
 
     [SerializeField] SavePoint savePoint;
     public Vector2 platformingRespawnPoint;
@@ -48,19 +49,27 @@ public class GameManager : MonoBehaviour
 
         victory.SetActive(true);
         pause.SetActive(true);
+
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = targetFPS;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.F10))
         {
             SaveData.Instance.Save_PlayerData();
             Debug.Log("File Saved #data/save.savepoint.data");
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.F9))
         {
             StartCoroutine(ActiveVictoryScreen());
+        }
+
+        if (Input.GetKeyDown(KeyCode.F8))
+        {
+            StartCoroutine(CanvasController.Instance.ActiveDeathScreen());
         }
 
         //if (Input.GetKeyDown(KeyCode.Escape) && !gameIsPaused)

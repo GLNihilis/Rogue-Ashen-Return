@@ -29,6 +29,12 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Damageable damageable = collision.GetComponent<Damageable>();
         if (damageable != null)
         {
@@ -39,6 +45,7 @@ public class Fireball : MonoBehaviour
             if (spellHit)
             {
                 Debug.Log(collision.name + " got hit for " + damage);
+                Destroy(gameObject);
             }
         }
     }
