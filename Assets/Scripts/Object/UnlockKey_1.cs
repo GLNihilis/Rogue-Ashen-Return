@@ -27,7 +27,6 @@ public class UnlockKey_1 : MonoBehaviour
         {
             used = true;
             PlayerController.Instance.unlocked_Key_1 = true;
-            SaveData.Instance.Save_PlayerData();
             Destroy(gameObject);
         }
     }

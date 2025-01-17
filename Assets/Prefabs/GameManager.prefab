@@ -146,7 +146,7 @@ MonoBehaviour:
   transitionedFromScene: 
   targetFPS: 60
   savePoint: {fileID: 0}
-  platformingRespawnPoint: {x: 0, y: 2}
+  platformingRespawnPoint: {x: 0, y: 0}
   respawnPoint: {x: 0, y: 0}
   victoryScreen: {fileID: 0}
   victory: {fileID: 0}

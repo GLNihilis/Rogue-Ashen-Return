@@ -37,7 +37,6 @@ public class UnlockWindSlash : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         PlayerController.Instance.unlocked_WindSlash = true;
-        SaveData.Instance.Save_PlayerData();
         canvasUI.SetActive(false);
         Destroy(gameObject);
     }

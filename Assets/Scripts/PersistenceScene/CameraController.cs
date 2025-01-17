@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour
             if (cameraBounds != null && confiner != null)
             {
                 confiner.m_BoundingShape2D = cameraBounds;
-                confiner.InvalidateCache();
+                confiner.InvalidateCache(); // Reset the cache of confiner
             }
         }
         else

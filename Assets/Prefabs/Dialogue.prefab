@@ -83,7 +83,7 @@ MonoBehaviour:
   interact: {fileID: 4894496448795595507}
   dialogueText: {fileID: 4980764684728751886}
   dialogues: []
-  writingSpeed: 0.1
+  writingSpeed: 0.05
   isStarted: 0
   waitForNext: 0
 --- !u!1 &4894496448795595507

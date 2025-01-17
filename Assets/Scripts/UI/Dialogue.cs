@@ -14,6 +14,7 @@ public class Dialogue : MonoBehaviour
     private int characterIndex;
     public bool isStarted;
     public bool waitForNext;
+    public bool skipTyping;
 
     private void ToggleWindow(bool show)
     {
@@ -73,26 +74,57 @@ public class Dialogue : MonoBehaviour
     {
         string currentDialogue = dialogues[index];
 
+        #region
         // Write the character
-        dialogueText.text += currentDialogue[characterIndex];
+        //dialogueText.text += currentDialogue[characterIndex];
 
-        // Increase the character index
-        characterIndex++;
+        //// Increase the character index
+        //characterIndex++;
 
         // The end of sentences
-        if (characterIndex < currentDialogue.Length)
-        {
-            // Wait for seconds to finish the dialogue
-            yield return new WaitForSeconds(writingSpeed);
+        //if (characterIndex < currentDialogue.Length)
+        //{
+        //    // Wait for seconds to finish the dialogue
+        //    yield return new WaitForSeconds(writingSpeed);
 
-            // Restart the same progress
-            StartCoroutine(Writing());
-        }
-        else
+        //    // Restart the same progress
+        //    StartCoroutine(Writing());
+        //}
+        //else
+        //{
+        //    waitForNext = true;
+        //    ToggleInteract(true);
+        //}
+        #endregion
+        #region
+        //int charactersToShow = 3;
+        //int remainingCharacters = currentDialogue.Length - characterIndex;
+
+        //for (int i = 0; i < Mathf.Min(charactersToShow, remainingCharacters); i++)
+        //{
+        //    dialogueText.text += currentDialogue[characterIndex];
+        //    characterIndex++;
+        //}
+        #endregion
+        #region
+        while (characterIndex < currentDialogue.Length)
         {
-            waitForNext = true;
+            if (skipTyping)
+            {
+                dialogueText.text = currentDialogue;
+                skipTyping = false;
+                break;
+            }
+
+            dialogueText.text += currentDialogue[characterIndex];
+            characterIndex++;
+            ToggleInteract(false);
+            yield return new WaitForSeconds(writingSpeed);
+            ToggleInteract(true);
         }
-        
+
+        waitForNext = true;
+        #endregion
     }
 
     private void Update()
@@ -111,9 +143,15 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
-                ToggleInteract(true);
                 EndDialogue();
             }
         }
+
+        #region
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            skipTyping = true;
+        }
+        #endregion
     }
 }

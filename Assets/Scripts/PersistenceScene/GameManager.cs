@@ -112,7 +112,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            respawnPoint = platformingRespawnPoint;
             Debug.Log("Save Point Position Data Not Found");
         }
 

@@ -37,7 +37,6 @@ public class UnlockDoubleJump : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         PlayerController.Instance.unlocked_DoubleJump = true;
-        SaveData.Instance.Save_PlayerData();
         canvasUI.SetActive(false);
         Destroy(gameObject);
     }

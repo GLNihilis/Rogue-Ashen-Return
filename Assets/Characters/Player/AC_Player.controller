@@ -644,7 +644,7 @@ MonoBehaviour:
   updateOnState: 1
   updateStateMachine: 0
   valueOnEnter: 0
-  valueOnExit: 0
+  valueOnExit: 1
 --- !u!1101 &-1468225819992000162
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

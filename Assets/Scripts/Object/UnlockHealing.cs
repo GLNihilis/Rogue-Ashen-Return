@@ -37,7 +37,6 @@ public class UnlockHealing : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         PlayerController.Instance.unlocked_Healing = true;
-        SaveData.Instance.Save_PlayerData();
         canvasUI.SetActive(false);
         Destroy(gameObject);
     }
