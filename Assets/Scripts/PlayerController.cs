@@ -613,6 +613,19 @@ public class PlayerController : MonoBehaviour
                 spell_1.transform.eulerAngles = new Vector2(spell_1.transform.eulerAngles.x, 180);
             }
 
+            #region
+            //float angle = -45f;
+
+            //if (isFacingRight)
+            //{
+            //    spell_1.transform.rotation = Quaternion.Euler(0, 0, angle);
+            //}
+            //else
+            //{
+            //    spell_1.transform.rotation = Quaternion.Euler(0, 0, 180 - angle);
+            //}
+            #endregion
+
             timeSinceCast_1 = timeCast_1;
             isCasting = true;
             StartCoroutine(CastCoroutine());

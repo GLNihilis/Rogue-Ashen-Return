@@ -9,6 +9,7 @@ public class Fireball : MonoBehaviour
     [SerializeField] private float speed = 0.2f;
     [SerializeField] private float lifeTime = 2f;
     [SerializeField] private Vector2 knockBack = Vector2.zero;
+    [SerializeField] private float angle = 45f;
 
     // Start is called before the first frame update
     void Start()
